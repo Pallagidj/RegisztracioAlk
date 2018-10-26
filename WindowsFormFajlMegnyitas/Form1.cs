@@ -76,10 +76,42 @@ namespace WindowsFormFajlMegnyitas
             {
                 using (StreamReader sr = new StreamReader(openFileDialog.FileName))
                 {
+                    string sor = sr.ReadLine();
                     
-                    sr.ReadLine();
-                    
-                   
+                    string [] adattag = sor.Split(';');
+
+                    NEV.Text = adattag [0];
+
+                    IDOZITO.Value = Convert.ToDateTime(adattag[1]);
+
+                    if (adattag[2] == "F")
+                    {
+                        FERFI.Checked = true;
+                    }
+                    else
+                    {
+                        NOSTENY.Checked = true;
+                    }
+
+                    if (Hobbi.Items.Contains(adattag [3]))
+                    {
+                        Hobbi.SelectedItem = adattag[3];
+                    }
+                    else
+                    {
+                        Hobbi.Items.Add(adattag[3]);
+                        Hobbi.SelectedItem = adattag[3];
+                    }
+
+                    string[] masodiksor = sr.ReadLine().Split(';');
+
+                    for (int i = 0; i < masodiksor.Length; i++)
+                    {
+                        if (!Hobbi.Items.Contains(masodiksor[i]))
+                        {
+                            Hobbi.Items.Add(masodiksor[i]);
+                        }
+                    }
                 }
             }
         }
