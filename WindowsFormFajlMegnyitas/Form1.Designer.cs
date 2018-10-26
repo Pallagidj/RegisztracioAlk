@@ -32,18 +32,18 @@
             this.Save = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NEV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.FERFI = new System.Windows.Forms.RadioButton();
+            this.NOSTENY = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Hobbi = new System.Windows.Forms.ListBox();
             this.Hobbiszveg = new System.Windows.Forms.TextBox();
             this.Hozzaad = new System.Windows.Forms.Button();
+            this.IDOZITO = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // Open
@@ -77,27 +77,16 @@
             // 
             this.saveFileDialog.Filter = "Szöveges Fájlok |*.txt|Minden fájl|*.tx";
             // 
-            // textBox1
+            // NEV
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.NEV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(99, 59);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(110, 29);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(99, 14);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(110, 28);
-            this.textBox2.TabIndex = 4;
+            this.NEV.Location = new System.Drawing.Point(99, 14);
+            this.NEV.Multiline = true;
+            this.NEV.Name = "NEV";
+            this.NEV.Size = new System.Drawing.Size(110, 28);
+            this.NEV.TabIndex = 4;
             // 
             // label1
             // 
@@ -129,29 +118,29 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Szül. dátum:";
             // 
-            // radioButton1
+            // FERFI
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.radioButton1.Location = new System.Drawing.Point(99, 110);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(34, 21);
-            this.radioButton1.TabIndex = 8;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "F";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.FERFI.AutoSize = true;
+            this.FERFI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.FERFI.Location = new System.Drawing.Point(99, 110);
+            this.FERFI.Name = "FERFI";
+            this.FERFI.Size = new System.Drawing.Size(34, 21);
+            this.FERFI.TabIndex = 8;
+            this.FERFI.TabStop = true;
+            this.FERFI.Text = "F";
+            this.FERFI.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // NOSTENY
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.radioButton2.Location = new System.Drawing.Point(163, 110);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(36, 21);
-            this.radioButton2.TabIndex = 9;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "N";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.NOSTENY.AutoSize = true;
+            this.NOSTENY.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.NOSTENY.Location = new System.Drawing.Point(163, 110);
+            this.NOSTENY.Name = "NOSTENY";
+            this.NOSTENY.Size = new System.Drawing.Size(36, 21);
+            this.NOSTENY.TabIndex = 9;
+            this.NOSTENY.TabStop = true;
+            this.NOSTENY.Text = "N";
+            this.NOSTENY.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -206,22 +195,29 @@
             this.Hozzaad.UseVisualStyleBackColor = true;
             this.Hozzaad.Click += new System.EventHandler(this.Hozzaad_Click);
             // 
+            // IDOZITO
+            // 
+            this.IDOZITO.Location = new System.Drawing.Point(99, 59);
+            this.IDOZITO.Name = "IDOZITO";
+            this.IDOZITO.Size = new System.Drawing.Size(145, 20);
+            this.IDOZITO.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 286);
+            this.Controls.Add(this.IDOZITO);
             this.Controls.Add(this.Hozzaad);
             this.Controls.Add(this.Hobbi);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.NOSTENY);
+            this.Controls.Add(this.FERFI);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NEV);
             this.Controls.Add(this.Hobbiszveg);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.Open);
@@ -238,18 +234,18 @@
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NEV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton FERFI;
+        private System.Windows.Forms.RadioButton NOSTENY;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox Hobbi;
         private System.Windows.Forms.TextBox Hobbiszveg;
         private System.Windows.Forms.Button Hozzaad;
+        private System.Windows.Forms.DateTimePicker IDOZITO;
     }
 }
 

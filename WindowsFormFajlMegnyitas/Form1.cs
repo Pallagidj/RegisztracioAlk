@@ -30,19 +30,45 @@ namespace WindowsFormFajlMegnyitas
         }
         private void Mentes()
         {
-            string tartalom = textBox1.Text + ";" + textBox2.Text;
-            saveFileDialog.FileName = "Naplo.txt";
-            var eredmeny = saveFileDialog.ShowDialog(this);
-            if (eredmeny == DialogResult.OK)
+            if (NEV.Text!="" && (FERFI.Checked || NOSTENY.Checked))
             {
-                string fileNev = saveFileDialog.FileName;
-               /* 
-               using (var file = File.CreateText(fileNev))
+                string tartalom = NEV.Text + ";" + IDOZITO.Value + ";";
+                if (FERFI.Checked == true)
                 {
-                    file.Write(tartalom);
+                    tartalom += "F;";
                 }
-                */
-                File.WriteAllText(fileNev,tartalom);
+                else
+                {
+                    tartalom += "N;";
+                }
+                tartalom += Hobbi.SelectedItem.ToString() + ";";
+                List<String> list = new List<string>();
+
+                foreach (String items in Hobbi.Items)
+                {
+                    list.Add(items);
+                }
+                foreach (string item in list)
+                {
+                    if (item != "") ;
+                    {
+                        tartalom += item + ";";
+                    }
+                }
+
+
+                var eredmeny = saveFileDialog.ShowDialog(this);
+                if (eredmeny == DialogResult.OK)
+                {
+                    string fileNev = saveFileDialog.FileName;
+                    /* 
+                    using (var file = File.CreateText(fileNev))
+                     {
+                         file.Write(tartalom);
+                     }
+                     */
+                    File.WriteAllText(fileNev, tartalom);
+                }
             }
 
 
@@ -52,14 +78,19 @@ namespace WindowsFormFajlMegnyitas
         {
             if (openFileDialog.ShowDialog(this)==DialogResult.OK)
             {
-                Hobbiszveg.Text = File.ReadAllText(openFileDialog.FileName);
+                NEV.Text = File.ReadAllText(openFileDialog.FileName);
             }
-
+            else
+            {
+                FERFI.Text = File.ReadAllText(openFileDialog.FileName);
+            }
         }
 
         private void Hozzaad_Click(object sender, EventArgs e)
         {
             Hobbi.Items.Add(Hobbiszveg.Text);
         }
+
+
     }
 }
