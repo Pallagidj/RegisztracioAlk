@@ -29,8 +29,9 @@ namespace WindowsFormFajlMegnyitas
 
         }
         private void Mentes()
+
         {
-            if (NEV.Text!="" && (FERFI.Checked || NOSTENY.Checked))
+            if (NEV.Text!="" && (FERFI.Checked || NOSTENY.Checked ) && Hobbi.SelectedItem != null)
             {
                 string tartalom = NEV.Text + ";" + IDOZITO.Value + ";";
                 if (FERFI.Checked == true)
@@ -41,20 +42,15 @@ namespace WindowsFormFajlMegnyitas
                 {
                     tartalom += "N;";
                 }
-                tartalom += Hobbi.SelectedItem.ToString() + ";";
-                List<String> list = new List<string>();
+                tartalom += Hobbi.SelectedItem.ToString() + Environment.NewLine;
 
-                foreach (String items in Hobbi.Items)
+
+                for (int i = 0; i < Hobbi.Items.Count -1; i++)
                 {
-                    list.Add(items);
+                    tartalom += Hobbi.Items[i] + ";" ;
                 }
-                foreach (string item in list)
-                {
-                    if (item != "") ;
-                    {
-                        tartalom += item + ";";
-                    }
-                }
+                tartalom += Hobbi.Items[Hobbi.Items.Count - 1];
+
 
 
                 var eredmeny = saveFileDialog.ShowDialog(this);
@@ -76,13 +72,15 @@ namespace WindowsFormFajlMegnyitas
 
         private void Megnyitas()
         {
-            if (openFileDialog.ShowDialog(this)==DialogResult.OK)
+            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
-                NEV.Text = File.ReadAllText(openFileDialog.FileName);
-            }
-            else
-            {
-                FERFI.Text = File.ReadAllText(openFileDialog.FileName);
+                using (StreamReader sr = new StreamReader(openFileDialog.FileName))
+                {
+                    
+                    sr.ReadLine();
+                    
+                   
+                }
             }
         }
 
