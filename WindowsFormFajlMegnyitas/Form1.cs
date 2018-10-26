@@ -103,6 +103,7 @@ namespace WindowsFormFajlMegnyitas
                         Hobbi.SelectedItem = adattag[3];
                     }
 
+
                     string[] masodiksor = sr.ReadLine().Split(';');
 
                     for (int i = 0; i < masodiksor.Length; i++)
